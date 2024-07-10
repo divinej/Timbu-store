@@ -30,6 +30,10 @@ em {
     font-style: italic;
 }
 
+table {
+    width: 100%;
+}
+
 /* #portal-root {
     position: relative;
 } */

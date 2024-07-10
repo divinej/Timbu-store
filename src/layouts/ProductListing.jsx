@@ -12,7 +12,7 @@ const ProductListing = () => {
             <div className="product-filter">
                 <div className="categories fs-200">
                     <fieldset className="filter-border">
-                        <legend className="fs-300 fw-bold">All Categories</legend>
+                        <legend className="fs-300 fw-bold mg-bt-1">All Categories </legend>
                         <div className="filter-control">
                             <input type="radio" id="tools" name="categories"/>
                             <label htmlFor="tools">Productivity Tool (134)</label>

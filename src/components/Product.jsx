@@ -4,7 +4,8 @@ import starRating from "../assets/Rating-Group.svg";
 
 const Product = ({title, imageUrl}) => {
     return (
-        <div className="product">
+        <a href="/product">
+            <div className="product">
             <div className="flex space-between mg-bt-1">
                 <button className="btn red-btn">New</button>
                 <img src={wishlistIcon} alt="" />
@@ -15,7 +16,8 @@ const Product = ({title, imageUrl}) => {
             <p className="mg-bt-1"><span className="fw-bold">$299.99</span> <del>400.00</del></p>
 
             <Link to="/cart" className="btn add-to-cart-btn fw-bold">Add to Cart</Link>
-        </div>
+            </div>
+        </a>
     )
 }
 

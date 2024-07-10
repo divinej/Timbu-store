@@ -59,13 +59,16 @@ const Checkout = () => {
             <div className="form-group">
                 <fieldset>
                     <legend className="fs-400">Payment method</legend>
-                    <p className="mg-bt-2"><img cl src={lockIcon} alt="" /> <span> All transactions are secured, processedand authorized by external payment providers</span></p>
+                    <div className="flex align-center gap-1 mg-bt-2">
+                        <img cl src={lockIcon} alt="" />
+                        <p>All transactions are secured, processedand authorized by external payment providers</p>
+                    </div>
                     <div className="filter-control mg-bt-1">
                         <div className="flex">
                             <input type="radio" id="security" name="categories" defaultChecked/>
                             <label htmlFor="security">Pay by Credit or Debit Card</label>
                         </div>
-                        <div>
+                        <div className="flex gap-1">
                             <img src={visa} alt="" /><img src={mastercard} alt="" />
                         </div>
                     </div>
@@ -103,8 +106,6 @@ const Checkout = () => {
                         <InputElement labelName="EXPIRATION DATE" type="date" name="expirationDate"  placeholder="First name" value={formState.expirationDate} onChange={handleFormChange}/>
                         <InputElement labelName="CVC" type="text" name="cvc"  placeholder="CVC code" value={formState.cvc} onChange={handleFormChange}/>
                     </div>
-                    
-                    <InputElement labelName="EMAIL ADDRESS" type="text" name="email"  placeholder="Your Email" value={formState.email} onChange={handleFormChange}/>
                 </fieldset>
             </div>
         </form>
