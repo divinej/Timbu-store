@@ -7,7 +7,7 @@ const MobileMenu = React.forwardRef(({click}, ref) => {
             <div className="menu white-bg" ref={ref}>
                 <div className="flex">
                     <h1 className="fs-600 fw-semi-bold">Timbu</h1>
-                    <img src={closeIcon} alt="close side menu" width="30" height="53" onClick={click}/>
+                    <img className="close" src={closeIcon} alt="close side menu" width="30" height="53" onClick={click}/>
                 </div>
                 <nav>
                     <ul className="menu-list fs-200 fw-semi-bold">

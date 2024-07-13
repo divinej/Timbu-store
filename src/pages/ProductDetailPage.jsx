@@ -7,7 +7,6 @@ import FeaturedProducts from "../layouts/FeaturedProducts";
 const ProductDetailPage = () => {
     return(
         <>
-            <Header />
             <main>
                 <div className="container mg-bt-1">
                     <div className="breadcrumb fs-300">
@@ -18,7 +17,6 @@ const ProductDetailPage = () => {
                 <FeaturedProducts ProductTitle="You may also like"/>
                 <Subscribe />
             </main>
-            <Footer />
         </>
     )
 }

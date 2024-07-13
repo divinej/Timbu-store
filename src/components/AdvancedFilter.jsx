@@ -15,43 +15,43 @@ const Filter = React.forwardRef(({click}, ref) => {
                 <fieldset className="filter-border">
                     <legend className="fs-300 fw-bold">All Categories</legend>
                     <div className="filter-control">
-                        <input type="radio" id="tools" name="categories"/>
-                        <label htmlFor="tools">Productivity Tool (134)</label>
+                        <input type="radio" id="tool" name="categories"/>
+                        <label htmlFor="tool">Productivity Tool (134)</label>
                     </div>
                     <div className="filter-control">
-                        <input type="radio" id="design" name="categories" defaultChecked />
-                        <label htmlFor="design">Creativity and Design (150)</label>
+                        <input type="radio" id="creativeD" name="categories" defaultChecked />
+                        <label htmlFor="creativeD">Creativity and Design (150)</label>
                     </div>
                     <div className="filter-control">
-                        <input type="radio" id="security" name="categories"/>
-                        <label htmlFor="security">Security and Privacy (54)</label>
+                        <input type="radio" id="secureP" name="categories"/>
+                        <label htmlFor="secureP">Security and Privacy (54)</label>
                     </div>
                     <div className="filter-control">
-                        <input type="radio" id="utilities" name="categories"/>
-                        <label htmlFor="utilities">Utilities (47)</label>
+                        <input type="radio" id="utility" name="categories"/>
+                        <label htmlFor="utility">Utilities (47)</label>
                     </div>
                     <div className="filter-control">
-                        <input type="radio" id="education" name="categories"/>
-                        <label htmlFor="education">Education and Learning (43)</label>
+                        <input type="radio" id="educat" name="categories"/>
+                        <label htmlFor="educat">Education and Learning (43)</label>
                     </div>
                     <div className="filter-control">
-                        <input type="radio" id="entertainment" name="categories" value="entertainment"/>
-                        <label htmlFor="entertainment">Entertainment (38)</label>
+                        <input type="radio" id="entertain" name="categories" value="entertainment"/>
+                        <label htmlFor="entertain">Entertainment (38)</label>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend className="fs-300 fw-bold">Brands</legend>
                     <div className="filter-control">
-                        <input type="checkbox" id="adobe" name="adobe" value="adobe"/>
-                        <label className="input-label" htmlFor="adobe">Adobe</label>
+                        <input type="checkbox" id="bAdobe" name="adobe" value="adobe"/>
+                        <label className="input-label" htmlFor="bAdobe">Adobe</label>
                     </div>
                     <div className="filter-control">
-                        <input type="checkbox" id="adobee" name="adobee" />
-                        <label className="input-label" htmlFor="adobee">Adobe</label>
+                        <input type="checkbox" id="bAdobee" name="adobe" />
+                        <label className="input-label" htmlFor="bAdobee">Adobe</label>
                     </div>
                     <div className="filter-control">
-                        <input type="checkbox" id="microsoft" name="microsoft" defaultChecked />
-                        <label className="input-label" htmlFor="microsoft">Microsoft</label>
+                        <input type="checkbox" id="bMicrosoft" name="microsoft" defaultChecked />
+                        <label className="input-label" htmlFor="bMicrosoft">Microsoft</label>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -68,24 +68,24 @@ const Filter = React.forwardRef(({click}, ref) => {
                 <fieldset className="filter-border fs-200">
                     <legend className="fs-300 fw-bold">Rating</legend>
                     <div className="filter-control">
-                        <input type="checkbox" id="5star" name="5star" value="5"/>
-                        <label className="input-label" htmlFor="5star"><img src={filledStar} alt="" width="17"  height="17" /> <img src={filledStar} alt="" width="17"  height="17" /><img src={filledStar} alt="" width="17"  height="17" /><img src={filledStar} alt="" width="17"  height="17" /><img src={filledStar} alt="" width="17"  height="17"/> <span className="rating-point"> 5.0</span></label>
+                        <input type="checkbox" id="fiveStar" name="fiveStar" value="5"/>
+                        <label className="input-label" htmlFor="fiveStar"><img src={filledStar} alt="" width="17"  height="17" /> <img src={filledStar} alt="" width="17"  height="17" /><img src={filledStar} alt="" width="17"  height="17" /><img src={filledStar} alt="" width="17"  height="17" /><img src={filledStar} alt="" width="17"  height="17"/> <span className="rating-point"> 5.0</span></label>
                     </div>
                     <div className="filter-control">
-                        <input type="checkbox" id="4star" name="4star" value="4" defaultChecked />
-                        <label className="input-label" htmlFor="4star"><img src={filledStar} alt="" width="17"  height="17" /> <img src={filledStar} alt="" width="17"  height="17" /><img src={filledStar} alt="" width="17"  height="17" /><img src={filledStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17"/> <span className="rating-point"> 4.0 & Up</span></label>
+                        <input type="checkbox" id="fourStar" name="fourStar" value="4" defaultChecked />
+                        <label className="input-label" htmlFor="fourStar"><img src={filledStar} alt="" width="17"  height="17" /> <img src={filledStar} alt="" width="17"  height="17" /><img src={filledStar} alt="" width="17"  height="17" /><img src={filledStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17"/> <span className="rating-point"> 4.0 & Up</span></label>
                     </div>
                     <div className="filter-control">
-                        <input type="checkbox" id="3star" name="3star" value="3"/>
-                        <label className="input-label" htmlFor="3star"><img src={filledStar} alt="" width="17"  height="17" /> <img src={filledStar} alt="" width="17"  height="17" /><img src={filledStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17"/> <span className="rating-point"> 3.0 & Up</span></label>
+                        <input type="checkbox" id="threeStar" name="threeStar" value="3"/>
+                        <label className="input-label" htmlFor="threeStar"><img src={filledStar} alt="" width="17"  height="17" /> <img src={filledStar} alt="" width="17"  height="17" /><img src={filledStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17"/> <span className="rating-point"> 3.0 & Up</span></label>
                     </div>
                     <div className="filter-control">
-                        <input type="checkbox" id="2star" name="2star" value="2"/>
-                        <label className="input-label" htmlFor="2star"><img src={filledStar} alt="" width="17"  height="17" /> <img src={filledStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17"/> <span className="rating-point"> 2.0 & Up</span></label>
+                        <input type="checkbox" id="twoStar" name="twoStar" value="2"/>
+                        <label className="input-label" htmlFor="twoStar"><img src={filledStar} alt="" width="17"  height="17" /> <img src={filledStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17"/> <span className="rating-point"> 2.0 & Up</span></label>
                     </div>
                     <div className="filter-control">
-                        <input type="checkbox" id="1star" name="1star" value="1"/>
-                        <label className="input-label" htmlFor="1star"><img src={filledStar} alt="" width="17"  height="17" /> <img src={ratingStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17"/> <span className="rating-point"> 1.0 & Up</span></label>
+                        <input type="checkbox" id="oneStar" name="oneStar" value="1"/>
+                        <label className="input-label" htmlFor="oneStar"><img src={filledStar} alt="" width="17"  height="17" /> <img src={ratingStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17" /><img src={ratingStar} alt="" width="17"  height="17"/> <span className="rating-point"> 1.0 & Up</span></label>
                     </div>
                     
                 </fieldset>

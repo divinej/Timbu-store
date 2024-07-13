@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import InputElement from "../components/InputElement";
 import SelectElement from "../components/SelectElement";
 import lockIcon from "../assets/lock.svg";
@@ -8,8 +9,12 @@ import americanExpress from "../assets/american-express.svg";
 import stripe from "../assets/stripe.svg";
 import paypal from "../assets/paypal.svg";
 import applepay from "../assets/applepay.svg";
+import { useNavigate } from "react-router-dom";
+import useNavigateToTop from "../features/NavigateToTop";
 
 const Checkout = () => {
+    const {setCart} = useOutletContext();
+
     const [formState, setFormState] = useState({
         firstName: "",
         lastName: '',
@@ -31,8 +36,18 @@ const Checkout = () => {
             [event.target.name]: event.target.value
         });
     }
+
+    const navigate = useNavigate();
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        navigate("/success");
+        window.scrollTo(0, 0);
+
+        setCart([]);
+    }
+
     return(
-        <form className="fs-200">
+        <form className="fs-200" id="checkout-form" onSubmit={handleSubmit}>
             <div className="form-group">
                 <fieldset>
                     <legend className="fs-400">Contact Information</legend>
@@ -40,7 +55,7 @@ const Checkout = () => {
                         <InputElement labelName="FIRST NAME" type="text" name="firstName"  placeholder="First name" value={formState.firstName} onChange={handleFormChange}/>
                         <InputElement labelName="LAST NAME" type="text" name="lastName"  placeholder="Last name" value={formState.lastName} onChange={handleFormChange}/>
                     </div>
-                    <InputElement labelName="PHONE NUMBER" type="text" name="phone"  placeholder="Phone Number" value={formState.phone} onChange={handleFormChange}/>
+                    <InputElement labelName="PHONE NUMBER" type="text" name="phone"  placeholder="Phone Number" value={formState.phone} onChange={handleFormChange} pattern="\d{11,}"/>
                     <InputElement labelName="EMAIL ADDRESS" type="text" name="email"  placeholder="Your Email" value={formState.email} onChange={handleFormChange}/>
                 </fieldset>
             </div>
@@ -104,7 +119,7 @@ const Checkout = () => {
                     <InputElement labelName="CARD NUMBER" type="text" name="card"  placeholder="1234 1234 1234" value={formState.card} onChange={handleFormChange}/>
                     <div className="flex gap-2">
                         <InputElement labelName="EXPIRATION DATE" type="date" name="expirationDate"  placeholder="First name" value={formState.expirationDate} onChange={handleFormChange}/>
-                        <InputElement labelName="CVC" type="text" name="cvc"  placeholder="CVC code" value={formState.cvc} onChange={handleFormChange}/>
+                        <InputElement labelName="CVC" type="text" name="cvc"  placeholder="CVC code" value={formState.cvc} onChange={handleFormChange} pattern="\d{3}"/>
                     </div>
                 </fieldset>
             </div>

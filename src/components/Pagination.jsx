@@ -1,23 +1,24 @@
+import { useState } from "react";
 
+const Pagination = ({totalProducts, productPerPage, setCurrentPage, currrentStorePage }) => {
+    let pages = [];
 
-const Pagination = () => {
+    for (let i = 1; i <= Math.ceil(totalProducts / productPerPage); i++) {
+        pages.push(i);
+    }
+   
     return (
         <div className="pagination">
             <button className="btn pagination-btn">Show More</button>
 
             <div className="pagination-conatiner flex">
-                <div className="pagination-circle p-prev">{`<`}</div>
-                <div className="pagination-circle active">1</div>
-                <div className="pagination-circle">2</div>
-                <div className="pagination-circle">3</div>
-                <div className="pagination-circle">4</div>
-                <div className="pagination-circle">5</div>
-                <div className="pagination-circle">...</div>
-                <div className="pagination-circle">21</div>
-                <div className="pagination-circle p-next">{`>`}</div>
+                <button className={currrentStorePage > 1 ? 'pagination-circle p-prev' : 'pagination-circle last-page'}  onClick={()=> currrentStorePage > 1 ? setCurrentPage(currrentStorePage - 1) :  setCurrentPage(1)}>{`<`}</button>
+                {
+                    pages.map((page, index) => <button key={index} className={page === currrentStorePage ? 'active pagination-circle' : 'pagination-circle'} onClick={()=> setCurrentPage(page)}>{page}</button>)
+                }
+                <button className={currrentStorePage < (Math.ceil(totalProducts / productPerPage)) ? 'pagination-circle p-next' : 'pagination-circle last-page'} onClick={()=> currrentStorePage < totalProducts ? setCurrentPage(currrentStorePage + 1) :  setCurrentPage(Math.ceil(totalProducts / productPerPage))}>{`>`}</button>
             </div>
         </div>
     )
 }
-
 export default Pagination;

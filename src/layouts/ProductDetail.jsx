@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import office2016 from "../assets/office2016-p-image.svg";
 import fourStar from "../assets/four-star.svg";
 import wishList from "../assets/heart.svg";
-
+import useNavigateToTop from "../features/NavigateToTop";
 const ProductDetail = () => {
     return(
         <>
@@ -44,7 +44,7 @@ const ProductDetail = () => {
                         </div>
                         <button className="btn wishlist-btn fw-bold"><img src={wishList} alt="" /> Wishlist</button>
                     </div>
-                    <Link to="/cart" className="btn add-to-cart-btn">Wishlist</Link>
+                    <Link to="/cart" className="btn add-to-cart-btn fw-bold" onClick={useNavigateToTop}>Add to Cart</Link>
                 </div>
             </div>
             <div className=" container fs-300 product-details">

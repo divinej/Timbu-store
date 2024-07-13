@@ -1,12 +1,12 @@
 import arrowRight from "../assets/arrow-right.svg";
 import arrowLeft from "../assets/arrow-left.svg";
 import Product from "../components/Product";
-import bitdefender from "../assets/bitdefender-p-image.svg";
-import office2016 from "../assets/office2016-p-image.svg";
-import mcafee from "../assets/mcafee-p-image.svg";
-import kasperky from "../assets/kasperky-p-image.svg";
+import { useOutletContext } from "react-router-dom";
+
 
 const FeaturedProducts = ({ProductTitle}) => {
+    const {products} = useOutletContext();
+  
     return (
         <section className="container featured-products">
             <div className="featured-products-title flex space-between">
@@ -22,10 +22,7 @@ const FeaturedProducts = ({ProductTitle}) => {
             </div>
 
             <div className="featured-listing">
-                <Product title="2024 Anti-Virus Bitdefender Latest Version" imageUrl={bitdefender}/>
-                <Product title="Microsoft Office 2016 Professional Plus" imageUrl={office2016}/>
-                <Product title="2024 5 Years Mc Afee Anti-Virus Latest Version" imageUrl={mcafee}/>
-                <Product title="Kaspersky Standard 1 Device 1 Year 2024" imageUrl={kasperky}/>
+                {products.slice(0, 4).map((item) => <Product key={item.unique_id} id={item.id} title={item.name} url={item.photos} price={item?.current_price[0].USD} item={item} slug={item.url_slug}/>)}
             </div>
             
         </section>

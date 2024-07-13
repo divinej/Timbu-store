@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 import Checkout from "../layouts/Checkout";
 import Footer from "../layouts/Footer";
 import Header2 from "../layouts/Header2";
@@ -6,13 +6,15 @@ import Subscribe from "../layouts/Subscribe";
 
 
 const CheckoutPage = () => {
+const {cart, totalCart} = useOutletContext();
+
     return(
         <>
         <Header2 title="Processing Order..."/>
         <main>
-            <div className="container mg-bt-1">
-                <h2 className="fs-400 fw-bold cart-summary">Cart Checkout</h2>
-                <div className="breadcrumb fs-300">
+            <div className="container">
+                <h2 className="fs-400 fw-bold cart-summary mg-bt-2">Cart Checkout</h2>
+                <div className="breadcrumb fs-300 mg-bt-2">
                     <p>Timbu {`>`} <span className="yellow-text">Cart</span> {`>`}<span className="yellow-text">Checkout</span></p>
                 </div>
             </div>
@@ -20,6 +22,8 @@ const CheckoutPage = () => {
                 <Checkout />
                 <div className="checkout-summary">
                     <p className="fs-400 fw-bold mg-bt-1">Order History</p>
+
+                    
                     <table className="fs-300">
                         <thead>
                             <tr>
@@ -28,26 +32,25 @@ const CheckoutPage = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Microsoft Office 2016 Professional Plus x 1</td>
-                                <td>$299.00</td>
-                            </tr>
-                            <tr>
-                                <td>Office Suite Software x 1</td>
-                                <td>$299.00</td>
-                            </tr>
-                            <tr>
-                                <td>Sub Total</td>
-                                <td>$598.00</td>
-                            </tr>
-                            <tr>
-                                <td>Shipping</td>
-                                <td>$8.00</td>
-                            </tr>
+                        {cart.map((item, index) => 
+                            <tr key={index}>
+                                <td>{item.name}</td>
+                                <td>{item?.current_price}</td>
+                            </tr>                 
+                            )
+                        }
+                         <tr>
+                            <td>Sub Total</td>
+                            <td>${totalCart}</td>
+                        </tr>
+                        <tr>
+                            <td>Shipping</td>
+                            <td>$8.00</td>
+                        </tr>
                         </tbody>
                     </table>
 
-                    <Link to="/success" className="checkout-btn fw-bold">Pay by Credit or Debit Card</Link>
+                    <button to="/success" form="checkout-form" className="btn checkout-btn fw-bold">Pay by Credit or Debit Card</button>
                 </div>
             </div>
             <Subscribe />

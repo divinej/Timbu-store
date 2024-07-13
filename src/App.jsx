@@ -1,26 +1,12 @@
-import { BrowserRouter, Routes, Route, } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
-import Store from './pages/store';
-import CartPage from './pages/CartPage';
-import CheckoutPage from './pages/CheckoutPage';
-import Success from './pages/Success';
-import ProductDetailPage from './pages/ProductDetailPage';
+import router from  './Router';
 
 
 function App() {
 
   return (
-    <>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Store />}></Route>
-        <Route path="/cart" element={<CartPage />}></Route>
-        <Route path="/checkout" element={<CheckoutPage />}></Route>
-        <Route path="/product" element={<ProductDetailPage />}></Route>
-        <Route path="/success" element={<Success />}></Route>
-      </Routes>
-    </BrowserRouter>
-    </>
+    <RouterProvider router={router} />
   )
 }
 

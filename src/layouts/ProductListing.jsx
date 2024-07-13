@@ -1,12 +1,9 @@
 import Product from "../components/Product";
-import bitfender from "../assets/bitdefender-p-image.svg";
-import office2016 from "../assets/office2016-p-image.svg";
-import mcafee from "../assets/mcafee-p-image.svg";
-import Kaspersky from "../assets/kasperky-p-image.svg"
 import filledStar from "../assets/filled-star.svg";
 import ratingStar from "../assets/star.svg";
 
-const ProductListing = () => {
+const ProductListing = ({currentProduct}) => {
+    console.log(currentProduct);
     return (
         <div className="product-listing container">
             <div className="product-filter">
@@ -104,12 +101,7 @@ const ProductListing = () => {
                 </div>
             </div>
             <div className="listing">
-                <Product title="2024 Anti-Virus Bitdefender Latest Version" imageUrl={bitfender} />
-                <Product title="Microsoft Office 2016 Professional Plus" imageUrl={office2016} />
-                <Product title="2024 5 Years Mc Afee Anti-Virus Latest Version" imageUrl={mcafee} />
-                <Product title="Kaspersky Standard 1 Device 1 Year 2024" imageUrl={Kaspersky} />
-                <Product title="Microsoft Office 2016 Professional Plus" imageUrl={office2016} />
-                <Product title="2024 5 Years Mc Afee Anti-Virus Latest Version" imageUrl={mcafee} />
+                { currentProduct.length > 0 ? currentProduct.map((item) => <Product key={item.unique_id} id={item.id} title={item.name} url={item.photos} price={item?.current_price[0].USD} item={item} slug={item.url_slug}/>) : <div className="empty-cart"><p>Sorry! No Product found</p></div>}
             </div>
         </div>
     )
