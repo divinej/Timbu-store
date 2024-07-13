@@ -5,17 +5,20 @@ import FeaturedProducts from "../layouts/FeaturedProducts";
 import { useOutletContext } from "react-router-dom";
 
 const CartPage = () => {
-    const {cart} = useOutletContext();
+    const {cart, filter} = useOutletContext();
     return (
         <>
-        {cart.length < 1 ? <div className="empty-cart"> <p className="fs-400 fw-semi-bold mg-bt-2">Your cart is empty!</p>
-                    <p className="mg-bt-1">Browse our categories and discover our best deals!</p>
-                    <Link to="/" className="btn fw-bold">Start Shopping</Link>
-                    </div> : <Cart />
-        }
+        <Header filter={filter} cartQuantity={cart.length}/>
+        <main>
+            {cart.length < 1 ? <div className="empty-cart"> <p className="fs-400 fw-semi-bold mg-bt-2">Your cart is empty!</p>
+                        <p className="mg-bt-1">Browse our categories and discover our best deals!</p>
+                        <Link to="/" className="btn fw-bold">Start Shopping</Link>
+                        </div> : <Cart />
+            }
             <FeaturedProducts ProductTitle="You may also Like"/>
             <FeaturedProducts ProductTitle="Customers who viewed this item also viewed"/>
             <Subscribe />
+        </main>
         </>
     )
 }

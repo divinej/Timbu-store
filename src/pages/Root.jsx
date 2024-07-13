@@ -70,7 +70,6 @@ const Root = () => {
                 <NotiBanner ref={bannerRef} title="Product added to cart successfully"/>, document.querySelector('#root')
             )}
             <Banner />
-            <Header filter={filter} cartQuantity={cart.length}/>
             <Outlet context={{products, cart, setCart, totalCart, setTotal, getTotalCartPrice, handleAddToCart, sortedProduct, filter}}/>
             <Footer />
         </>

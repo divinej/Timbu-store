@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../layouts/Header";
 import Filter from "../layouts/Filter";
 import ProductListing from "../layouts/ProductListing";
 import Pagination from "../components/Pagination";
@@ -20,10 +21,13 @@ const Store = () => {
      
     return (
         <>
+            <Header filter={context.filter} cartQuantity={context.cart.length}/>
             <main>
                 <Filter />
                 <ProductListing currentProduct={currentProduct}/>
-                <Pagination totalProducts={context.products.length} productPerPage={productPerPage} setCurrentPage={setCurrentPage} currrentStorePage={currrentStorePage} />
+                {currentProduct > 0 ? <Pagination totalProducts={context.sortedProduct.length} productPerPage={productPerPage} setCurrentPage={setCurrentPage} currrentStorePage={currrentStorePage} />
+                 : <div></div>
+                }
                 <Subscribe />
             </main>
         </>

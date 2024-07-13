@@ -10,7 +10,7 @@ const Header2 = ({title}) => {
         navRef.current.classList.toggle("active");
     }
     return (
-        <header>
+        <header className="white-bg">
             <div className="container flex">
                 <div className="logo flex">
                     <button className="header-btn" type="submit" onClick={showMenu}><img src={bars} alt="Mobile Menu" /></button>

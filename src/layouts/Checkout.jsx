@@ -80,8 +80,8 @@ const Checkout = () => {
                     </div>
                     <div className="filter-control mg-bt-1">
                         <div className="flex">
-                            <input type="radio" id="security" name="categories" defaultChecked/>
-                            <label htmlFor="security">Pay by Credit or Debit Card</label>
+                            <input type="radio" id="debitCard" name="paymentMethod" defaultChecked/>
+                            <label htmlFor="debitCard">Pay by Credit or Debit Card</label>
                         </div>
                         <div className="flex gap-1">
                             <img src={visa} alt="" /><img src={mastercard} alt="" />
@@ -89,29 +89,29 @@ const Checkout = () => {
                     </div>
                     <div className="filter-control mg-bt-1">
                         <div className="flex">
-                            <input type="radio" id="security" name="categories"/>
-                            <label htmlFor="security">American Express </label>
+                            <input type="radio" id="americanExpress" name="paymentMethod"/>
+                            <label htmlFor="americanExpress">American Express </label>
                         </div>
                         <img src={americanExpress} alt="" />
                     </div>
                     <div className="filter-control mg-bt-1">
                         <div className="flex">
-                            <input type="radio" id="security" name="categories"/>
-                            <label htmlFor="security">Pay by Stripe </label>
+                            <input type="radio" id="stripe" name="paymentMethod"/>
+                            <label htmlFor="stripe">Pay by Stripe </label>
                         </div>
                         <img src={stripe} alt="" />
                     </div>
                     <div className="filter-control mg-bt-1">
                         <div className="flex">
-                            <input type="radio" id="security" name="categories"/>
-                            <label htmlFor="security">Paypal</label>
+                            <input type="radio" id="paypal" name="paymentMethod"/>
+                            <label htmlFor="paypal">Paypal</label>
                         </div>
                         <img src={paypal} alt="" />
                     </div>
                     <div className="filter-control mg-bt-1">
                         <div className="flex">
-                            <input type="radio" id="security" name="categories"/>
-                            <label htmlFor="security">ApplePay</label>
+                            <input type="radio" id="applePay" name="paymentMethod"/>
+                            <label htmlFor="applePay">ApplePay</label>
                         </div>
                         <img src={applepay} alt="" />
                     </div>
