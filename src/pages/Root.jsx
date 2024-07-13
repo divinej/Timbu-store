@@ -8,7 +8,7 @@ import NotiBanner from "../components/NotiBanner";
 import axios from "axios";
 
 
-const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || "[");
+const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || "[]");
 const Root = () => {
 
     const [cart, setCart] = useState(cartFromLocalStorage);
@@ -29,7 +29,7 @@ const Root = () => {
     }, [cart]);
 
     useEffect(()=> {
-        axios.get("/api/products?organization_id=bee68d4e8d4548a99e8ea7691639dfa0&reverse_sort=false&size=30&Appid=4125D7OZ0HVPQ8P&Apikey=8384d961337e4e548df90aa80a4ebe5f20240713064619234278")
+        axios.get("https://api.timbu.cloud/products?organization_id=bee68d4e8d4548a99e8ea7691639dfa0&reverse_sort=false&size=30&Appid=4125D7OZ0HVPQ8P&Apikey=8384d961337e4e548df90aa80a4ebe5f20240713064619234278")
             .then(res => {
                 setProducts(res.data.items)
                 setSortedProduct(res.data.items);
