@@ -1,7 +1,6 @@
 import { Link, useOutletContext } from "react-router-dom";
 import wishlistIcon from "../assets/wishlist.svg";
 import star from "../assets/star.svg";
-import useNavigateToTop from "../pages/NavigateToTop";
 
 
 const Product = ({id,title, url, price, item}) => {

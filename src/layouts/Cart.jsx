@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import Breadcrumb from "../components/Breadcrumb";
 import CartItem from "../components/CartItem";
 import couponIcon from "../assets/ticket.svg";
-import useNavigateToTop from "../pages/NavigateToTop";
 import { useOutletContext } from "react-router-dom";
 
 const Cart = () => {

@@ -1,11 +1,11 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import ReactDom from "react-dom";
 import React, { useState, useEffect, useRef } from "react";
 import Footer from "../layouts/Footer";
 import Banner from "../layouts/Banner";
 import NotiBanner from "../components/NotiBanner";
 import axios from "axios";
-import NavigateToTop from "./NavigateToTop";
+import NavigateToTop from "../NavigateToTop";
 
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || "[]");
@@ -29,7 +29,7 @@ const Root = () => {
     }, [cart]);
 
     useEffect(()=> {
-        axios.get("/api/products?organization_id=bee68d4e8d4548a99e8ea7691639dfa0&reverse_sort=false&size=30&Appid=4125D7OZ0HVPQ8P&Apikey=8384d961337e4e548df90aa80a4ebe5f20240713064619234278")
+        axios.get("https://api.timbu.cloud/products?organization_id=bee68d4e8d4548a99e8ea7691639dfa0&reverse_sort=false&size=30&Appid=4125D7OZ0HVPQ8P&Apikey=8384d961337e4e548df90aa80a4ebe5f20240713064619234278")
             .then(res => {
                 setProducts(res.data.items)
                 setSortedProduct(res.data.items);
