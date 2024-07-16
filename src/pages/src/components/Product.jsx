@@ -1,17 +1,15 @@
 import { Link, useOutletContext } from "react-router-dom";
 import wishlistIcon from "../assets/wishlist.svg";
 import star from "../assets/star.svg";
-import useNavigateToTop from "../pages/NavigateToTop";
+import useNavigateToTop from "../features/NavigateToTop";
 
 
-const Product = ({id,title, url, price, item}) => {
+const Product = ({id,title, url, price, item, slug}) => {
     const {handleAddToCart} = useOutletContext();
-    const slug = title.toLowerCase().split(' ').join('-');
- 
-
+   
     return (
         <div className="product">
-            <Link to={`/product/${slug}`} >
+            <Link to={`/product/${slug}`} onClick={useNavigateToTop}>
                 <div className="product-box">
                     <div className="flex space-between mg-bt-1">
                         <button className="btn red-btn">New</button>

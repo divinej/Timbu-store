@@ -3,7 +3,7 @@ import filledStar from "../assets/filled-star.svg";
 import ratingStar from "../assets/star.svg";
 
 const ProductListing = ({currentProduct}) => {
-
+    
     return (
         <div className="product-listing container">
             <div className="product-filter">
@@ -103,7 +103,7 @@ const ProductListing = ({currentProduct}) => {
                 { 
                 currentProduct.length > 0 ? 
                 <div className="listing">
-                    {currentProduct.map((item) => <Product key={item.unique_id} id={item.unique_id} title={item.name} url={item.photos} price={item?.current_price[0].USD} item={item}/>) }
+                    {currentProduct.map((item) => <Product key={item.unique_id} id={item.id} title={item.name} url={item.photos} price={item?.current_price[0].USD} item={item} slug={item.url_slug}/>) }
                 </div>
                 : <div className="empty-cart"><p>Sorry! No Product found</p></div>
                 }

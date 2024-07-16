@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Breadcrumb from "../components/Breadcrumb";
 import CartItem from "../components/CartItem";
 import couponIcon from "../assets/ticket.svg";
-import useNavigateToTop from "../pages/NavigateToTop";
+import useNavigateToTop from "../features/NavigateToTop";
 import { useOutletContext } from "react-router-dom";
 
 const Cart = () => {
@@ -56,7 +56,7 @@ const Cart = () => {
                             <p className="fs-300 fw-bold">subtotal</p>
                             <p className="fs-400 fw-bold">${totalCart}</p>
                         </div>
-                        <Link to="/checkout" className="btn checkout-btn fw-bold" >Checkout ${totalCart}</Link>
+                        <Link to="/checkout" className="btn checkout-btn fw-bold" onClick={useNavigateToTop}>Checkout ${totalCart}</Link>
                     </div>
                 </div> 
             </div>

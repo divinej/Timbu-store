@@ -1,7 +1,6 @@
 import Cart from "../layouts/Cart";
 import Subscribe from "../layouts/Subscribe";
 import { Link } from "react-router-dom";
-import Header from "../layouts/Header";
 import FeaturedProducts from "../layouts/FeaturedProducts";
 import { useOutletContext } from "react-router-dom";
 

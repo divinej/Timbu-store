@@ -10,7 +10,7 @@ import stripe from "../assets/stripe.svg";
 import paypal from "../assets/paypal.svg";
 import applepay from "../assets/applepay.svg";
 import { useNavigate } from "react-router-dom";
-import useNavigateToTop from "../pages/NavigateToTop";
+import useNavigateToTop from "../features/NavigateToTop";
 
 const Checkout = () => {
     const {setCart} = useOutletContext();

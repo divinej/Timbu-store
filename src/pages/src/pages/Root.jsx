@@ -1,11 +1,11 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import ReactDom from "react-dom";
 import React, { useState, useEffect, useRef } from "react";
 import Footer from "../layouts/Footer";
+import Header from "../layouts/Header";
 import Banner from "../layouts/Banner";
 import NotiBanner from "../components/NotiBanner";
 import axios from "axios";
-import NavigateToTop from "./NavigateToTop";
 
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || "[]");
@@ -37,12 +37,13 @@ const Root = () => {
             .catch(err => console.log(err))
     }, [])
 
+    
     const bannerRef = useRef();
 
     const handleAddToCart = (item) => {
         let isPresent = false;
         cart.forEach((product, index) => {
-            if ( product.unique_id === item.unique_id ) {
+            if ( product.id === item.id ) {
                  isPresent = true;
                  const newState = [...cart]
                  newState[index].quantity += 1;
@@ -70,7 +71,6 @@ const Root = () => {
             )}
             <Banner />
             <Outlet context={{products, cart, setCart, totalCart, setTotal, getTotalCartPrice, handleAddToCart, sortedProduct, filter}}/>
-            <NavigateToTop />
             <Footer />
         </>
     )
